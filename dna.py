@@ -21,10 +21,15 @@ def main():
         sequence = file.read()
 
     # TODO: Find longest match of each STR in DNA sequence
+    longest = longest_match(sequence, "AGATC")
+    print(longest)
 
     # TODO: Check database for matching profiles
 
-    return
+    for item in database:
+        for key, value in item.items():
+            if str(longest) == value:
+                print(f"Match {item['name']}")
 
 
 def longest_match(sequence, subsequence):
